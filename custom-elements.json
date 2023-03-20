@@ -1,0 +1,280 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "api/park.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
+            {
+              "name": "request"
+            },
+            {
+              "name": "res"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "handler",
+            "module": "api/park.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/coaster-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CoasterCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "toggleEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string"
+              },
+              "default": "'My app'",
+              "privacy": "public",
+              "attribute": "header",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Steel Vengeance'",
+              "privacy": "public",
+              "attribute": "name"
+            },
+            {
+              "kind": "field",
+              "name": "imgurl",
+              "type": {
+                "text": "string"
+              },
+              "default": "'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Steel_Vengeance_Drop_View.jpg/250px-Steel_Vengeance_Drop_View.jpg'",
+              "privacy": "public",
+              "attribute": "imgurl"
+            },
+            {
+              "kind": "field",
+              "name": "top",
+              "type": {
+                "text": "string"
+              },
+              "default": "'This is a roller coaster'",
+              "privacy": "public",
+              "attribute": "top"
+            },
+            {
+              "kind": "field",
+              "name": "bottom",
+              "type": {
+                "text": "string"
+              },
+              "default": "'It can be changed'",
+              "privacy": "public",
+              "attribute": "bottom"
+            },
+            {
+              "kind": "field",
+              "name": "opened",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "opened",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "colors",
+              "privacy": "public",
+              "attribute": "colors",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "opened-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header",
+              "fieldName": "header"
+            },
+            {
+              "name": "name",
+              "fieldName": "name"
+            },
+            {
+              "name": "imgurl",
+              "fieldName": "imgurl"
+            },
+            {
+              "name": "top",
+              "fieldName": "top"
+            },
+            {
+              "name": "bottom",
+              "fieldName": "bottom"
+            },
+            {
+              "name": "colors",
+              "fieldName": "colors"
+            },
+            {
+              "name": "opened",
+              "fieldName": "opened"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "coaster-card",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "coaster-card",
+          "declaration": {
+            "name": "CoasterCard",
+            "module": "src/coaster-card.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/coaster-collection.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CoasterCollection",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updatePark"
+            },
+            {
+              "kind": "field",
+              "name": "rides",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "rides"
+            },
+            {
+              "kind": "field",
+              "name": "park",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Cedar Point'",
+              "privacy": "public",
+              "attribute": "park"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "rides",
+              "fieldName": "rides"
+            },
+            {
+              "name": "park",
+              "fieldName": "park"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CoasterCollection",
+          "declaration": {
+            "name": "CoasterCollection",
+            "module": "src/coaster-collection.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "CoasterCollection",
+            "module": "src/coaster-collection.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/coaster-card.stories.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "App"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/coaster-card.stories.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "App",
+          "declaration": {
+            "name": "App",
+            "module": "stories/coaster-card.stories.js"
+          }
+        }
+      ]
+    }
+  ]
+}

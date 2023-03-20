@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+    coaster-card::part(spacing){
+      margin: 100px;
+    }
+  </style>
+  <title>coaster-card</title>
+</head>
+
+<body>
+  
+  <div class="buttons">
+    <button class="add">Make a duplicate</button>
+    <button class="toggle">Background Color</button>
+    <button class="word">Words</button>
+    <button class="del">Remove Last</button>
+    <button class="detail">toggle details</buttton>
+  </div>
+  <div id="card">
+    <coaster-collection></coaster-collection>
+    <meme-maker></meme-maker>
+    <coaster-card opened>
+      <ul>
+        <li>Steel Vengeance is the best roller coaster</li>
+        <li>Iron Gwazi is not as good</li>
+        </ul>
+
+    </coaster-card>
+  </div>
+  <script type="module">
+    import "./src/coaster-card.js";
+    import "./src/coaster-collection.js";
+  </script>
+  <script>
+    document.body.addEventListener('opened-changed', (e) =>{
+      document.querySelector('.detail').innerText = e.detail.value ? 'Hide Details' : "Show Details";
+    });
+    document.querySelector('.detail').addEventListener('click', (e) => {
+      const card = document.querySelector('coaster-card');
+      card.opened = !card.opened;
+    });
+    document.querySelector('.add').addEventListener('click', function(e) {
+      const itemToClone = document.querySelector('coaster-card').cloneNode();
+      document.querySelector('#card').appendChild(itemToClone);
+    });
+    document.querySelector('.word').addEventListener('click', function(e) {
+      let rideName = prompt("Name that coaster!");
+      if (rideName) {
+        document.querySelectorAll('coaster-card').forEach((item) =>{
+          item.name = rideName;
+        })
+      }
+    });
+    document.querySelector('.toggle').addEventListener('click', function(e) {
+      let card = document.querySelector('coaster-card');
+      if (card.colors){
+        document.querySelectorAll('coaster-card').forEach((item) =>{
+          item.colors = false;
+        })
+        
+      } else {
+        document.querySelectorAll('coaster-card').forEach((item) =>{
+          item.colors = true;
+        })
+      }
+    });
+    document.querySelector('.del').addEventListener('click', function(e) {
+      if (document.querySelector('#card coaster-card:last-child') !== document.querySelector('coaster-card')) {
+        document.querySelector('#card coaster-card:last-child').remove();      
+      }
+      else {
+        alert("Long live the coaster wars");
+      }
+    });
+
+
+
+  </script>
+</body>
+
+</html>
